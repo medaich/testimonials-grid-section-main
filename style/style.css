@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --base-size: 1rem;
+  --scale: 1.25;
+  --h1: calc(var(--h2) * var(--scale));
+  --h2: calc(var(--h3) * var(--scale));
+  --h3: calc(var(--h4) * var(--scale));
+  --h4: calc(var(--h5) * var(--scale));
+  --h5: calc(var(--h6) * var(--scale));
+  --h6: var(--base-size);
+
+  /* colors */
+  /* primary */
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  /* Neutral */
+
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --light-grayish-blue50: hsla(210, 46%, 95%, 0.5);
+  --light-grayish-blue70: hsla(210, 46%, 95%, 0.7);
+  --very-dark-grayish-blue50: hsla(217, 19%, 35%, 0.5);
+  --very-dark-grayish-blue70: hsla(217, 19%, 35%, 0.7);
+
+  /* Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+  /* fonts */
+  --sans-serif: "Barlow Semi Condensed", sans-serif; /* Weights: 500, 600 */
+
+  /* font weights */
+  --w1: 600;
+  --w2: 500;
+  --w2: 400;
+  --w3: 200;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--sans-serif);
+  font-weight: var(--w2);
+  line-height: 1.2;
+  background: var(--light-gray);
+  color: var(--light-grayish-blue);
+  font-size: var(--base-size);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+.h1 {
+  font-size: var(--h1);
+}
+
+h2,
+.h2 {
+  font-size: var(--h2);
+}
+
+h3,
+.h3 {
+  font-size: var(--h3);
+}
+
+h4,
+.h4 {
+  font-size: var(--h4);
+}
+
+h5,
+.h5 {
+  font-size: var(--h5);
+}
+
+h6,
+.h6 {
+  font-size: var(--h6);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--w1);
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.wrapper {
+  max-width: 375px;
+  margin: 0 auto;
+  border: 1px solid chartreuse;
+}
+.wrapper > * {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  background-color: rgb(23, 187, 187);
+}
+.img-box {
+  max-width: 4.5rem;
+  overflow: hidden;
+}
+.img-box img {
+  border-radius: 50%;
+  display: block;
+}
+.wrapper .profile {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.profile h1 {
+  font-size: var(--h5);
+}
+.profile h2 {
+  font-weight: var(--w2);
+  color: var(--light-grayish-blue50);
+  font-size: var(--h6);
+}
+.comment {
+  font-size: var(--h5);
+  font-weight: var(--w1);
+}
+.description {
+  font-size: var(--h6);
+  color: var(--light-grayish-blue70);
+}
+.card > .content p {
+  margin: 1.5rem 0;
+}
+.card:first-child {
+  background-color: var(--moderate-violet);
+  position: relative;
+  z-index: 1;
+}
+.card:nth-child(2) {
+  background-color: var(--very-dark-grayish-blue);
+}
+.card:nth-child(3),
+.card:nth-child(5) {
+  background-color: var(--white);
+}
+.card:nth-child(4) {
+  background-color: var(--very-dark-blackish-blue);
+}
+.card:nth-child(3) .profile h1,
+.card:nth-child(5) .profile h1,
+.card:nth-child(3) .comment,
+.card:nth-child(5) .comment {
+  color: var(--very-dark-grayish-blue);
+}
+.card:nth-child(3) .profile h2,
+.card:nth-child(5) .profile h2 {
+  color: var(--very-dark-grayish-blue50);
+}
+.card:nth-child(3) .description,
+.card:nth-child(5) .description {
+  color: var(--very-dark-grayish-blue70);
+}
+.card:first-child::before {
+  content: "";
+  background: url("../images/bg-pattern-quotation.svg");
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: -1;
+}
