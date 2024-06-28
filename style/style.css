@@ -56,7 +56,7 @@ body {
   font-family: var(--sans-serif);
   font-weight: var(--w2);
   line-height: 1.2;
-  background: var(--light-gray);
+  background: var(--light-grayish-blue);
   color: var(--light-grayish-blue);
   font-size: var(--base-size);
   margin: 0;
